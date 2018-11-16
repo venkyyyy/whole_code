@@ -18,7 +18,7 @@ class ContentfromchromeSpider(scrapy.Spider):
         yield scrapy.Request(url='https://www.google.com/search?q=jobs+near+me&ibp=htl;jobs', callback=self.parse)
     
     def __init__(self):
-        self.driver = webdriver.Chrome('/chromedriver')
+        self.driver = webdriver.Chrome()
 
     def parse(self, response):
         self.driver.get('https://www.google.com/search?q=jobs+near+me&ibp=htl;jobs')
